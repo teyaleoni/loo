@@ -1,0 +1,59 @@
+html {box-sizing:border-box;}
+*,* :after, *:before {box-sizing:inherit;}
+
+.ListingContainer {
+    background-image: linear-gradient(lightgray,rgb(80, 219, 223));
+    background-size: cover;  
+}
+
+#body1{
+    width: 445px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 15px;
+    font-family: ‘abel’, sans-serif;
+}
+
+#img1{
+    padding: 20px;
+    text-align: center;
+}
+
+#img2{
+    width: 400px;
+    border: 2px solid lightgray;
+    border-radius: 15px;
+}
+
+#body2{
+    margin: 0 auto;
+    width: 333px;
+}   
+
+#name1{
+    border-bottom: 2px solid lightgray;
+}
+
+
+#addy1{
+    width: 280px;
+    border-bottom: 2px solid lightgray;
+}
+
+
+
+#hours1{
+    width:220px;
+    border-bottom: 2px solid lightgray;
+}
+
+
+#feats1{
+    padding-bottom: 20px;
+}
+
+#feats2{
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 18px;
+}

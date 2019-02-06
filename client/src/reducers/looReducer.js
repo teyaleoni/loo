@@ -1,5 +1,6 @@
 const initialState = {
-  markers: []
+  markers: [],
+  currentListing: {}
 }
 
 export default function (state = initialState, action) {
@@ -7,7 +8,10 @@ export default function (state = initialState, action) {
     // add actions here
     case 'GET_MARKERS':
       return {...state, markers: action.markers}
+    case 'GET_LISTING':
+      return {...state, currentListing: action.establishment}
     default:
       return state
   }
 }
+
