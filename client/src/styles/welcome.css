@@ -1,0 +1,26 @@
+html {box-sizing:border-box;}
+*,* :after, *:before {box-sizing:inherit;}
+
+.welcomeContainer{
+   margin: auto;
+   width: 50%;
+   padding: 10px;
+   font-family: 'abel', sans-serif;
+}
+
+#loo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
+}
+
+#goTo {
+    text-align: center;
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+}

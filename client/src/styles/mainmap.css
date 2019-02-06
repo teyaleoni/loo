@@ -1,0 +1,33 @@
+html {box-sizing:border-box;}
+*,* :after, *:before {box-sizing:inherit;}
+
+.MainMapContainer {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    font-family: 'abel', sans-serif;
+}
+
+header, footer {
+    height: 55px;
+    background-color: rgb(80, 219, 223)
+}
+
+#header {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding: 8px;
+    letter-spacing: 3px;
+}
+
+.Content {
+    display: flex;
+}
+
+/* 
+    This is the dimensions for garrett's listings
+    #listings {
+    height: 650px;
+    width: 35%;
+} */
