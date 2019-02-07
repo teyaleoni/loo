@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import GoogleMap from './GoogleMap'
+import Listings from './Listings'
 import '../styles/mainmap.css'
 
 
@@ -11,7 +12,7 @@ class MainMap extends Component {
                 <header id="header">Loo</header>
                     <div className="Content">
                         <GoogleMap />
-                        {/* Listings go here, Make sure to import it at the top*/}
+                        <Listings />
                     </div>
                 <footer></footer>   
             </div>

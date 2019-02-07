@@ -9,21 +9,21 @@ Router.get('/example', (req, res, next) => {
   })
 })
 
-Router.get('/listings', (req, res, next) => {
-  const sql = 
-    `SELECT name, 
-            longitude, 
-            latitude 
-    FROM 
-      LISTINGS`
+// Router.get('/listings', (req, res, next) => {
+//   const sql = 
+//     `SELECT name, 
+//             longitude, 
+//             latitude 
+//     FROM 
+//       LISTINGS`
 
       
-  conn.query(sql, (error, results, fields) => {
-    res.json(results)
+//   conn.query(sql, (error, results, fields) => {
+//     res.json(results)
 
-  })
+//   })
 
-})
+// })
 
 Router.get('/listings', (req, res, next) => {
   const sql = `SELECT a.*, GROUP_CONCAT(feat.feature SEPARATOR ', ') as features

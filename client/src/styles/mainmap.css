@@ -25,9 +25,40 @@ header, footer {
     display: flex;
 }
 
-/* 
-    This is the dimensions for garrett's listings
-    #listings {
-    height: 650px;
+#roomwrap {
+    overflow:auto;
     width: 35%;
-} */
+    height: 650px;
+}
+
+#room{
+    height:100%;
+    padding: 10px;
+}
+
+.listingBox{
+    margin: 10px;
+    border: .5px solid black;
+    font-size: 15px;
+    font-family: ‘abel’, sans-serif;
+    border-radius: 5px;
+}
+
+.listingBox:hover{
+    cursor: pointer;
+}
+
+#name3{
+    padding-top: 0;
+    padding-left: 10px;
+}
+
+#addy3{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#name3:hover, #addy3:hover{
+    cursor: pointer;
+    text-decoration-line: underline;
+}
