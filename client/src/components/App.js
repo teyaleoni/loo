@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div>
+          <div id="main-app">
             <Route path="/" exact component={Welcome} />
             <Route path="/GoogleMap" exact component={GoogleMap} />
             <Route path="/MainMap" exact component={MainMap} />

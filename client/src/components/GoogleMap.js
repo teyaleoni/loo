@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
  /* import action */
 import { getGoogleMarkers } from '../actions/looActions'
  
-const Markers = ({ image }) => <img src={image} height="45" width="45" />;
-
-
+const Markers = ({ image }) => <img src={image} height="45" width="45"/>;
  
 class GoogleMap extends Component {
   /* action */
@@ -25,9 +23,10 @@ class GoogleMap extends Component {
 
  
   render() {
+
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '650px', width: '65%' }}>
+      <div style={{ height: '621px', width: '65%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyAVJoGr5pyaGNsc0XpbOCYGB3EfKjxXuc4' }}
           defaultCenter={this.props.center}
@@ -35,19 +34,16 @@ class GoogleMap extends Component {
         >
         
           {console.log(this.props.markers) /* This was empty so this is a server error*/ } 
-            {this.props.markers.map(marker => {
+            {this.props.markers.map(( marker, i )=> {
               /*Put the <Marker> in the map instead of outside*/
               return <Markers 
                 lat={marker.latitude}
                 lng={marker.longitude}
                 image={'/icon.png'}
-              />
+                key={marker + i} />
             })}
+
           
-        
-
-
-         
         </GoogleMapReact>
       </div>
     );

@@ -17,7 +17,6 @@ Router.get('/example', (req, res, next) => {
 //     FROM 
 //       LISTINGS`
 
-      
 //   conn.query(sql, (error, results, fields) => {
 //     res.json(results)
 
@@ -34,6 +33,7 @@ Router.get('/listings', (req, res, next) => {
 
 
       conn.query( sql, (error, results, fields) => {
+        console.log(results)
           res.json(results);
       });
 });

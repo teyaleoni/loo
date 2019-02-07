@@ -1,6 +1,19 @@
 html {box-sizing:border-box;}
 *,* :after, *:before {box-sizing:inherit;}
 
+
+
+body {
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 100%;
+}
+
+.welcomeOuterContainer {
+    height: 100%;
+    width: 100%;
+}
+
 .welcomeContainer{
    margin: auto;
    width: 50%;
@@ -12,8 +25,8 @@ html {box-sizing:border-box;}
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
 }
 
 #goTo {
