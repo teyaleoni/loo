@@ -57,3 +57,8 @@ html {box-sizing:border-box;}
     border-bottom: 2px solid lightgray;
     padding-bottom: 18px;
 }
+
+#butt{
+    margin-bottom: 18px;
+    border-radius: 5px;
+}
