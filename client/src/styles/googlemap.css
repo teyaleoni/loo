@@ -1,0 +1,8 @@
+.marker {
+    cursor: pointer;
+    opacity: 0.5; 
+}
+
+.marker:hover, .markerHover {
+    opacity: 1; 
+}

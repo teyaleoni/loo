@@ -1,6 +1,8 @@
 const initialState = {
   markers: [],
-  currentListing: {}
+  currentListing: {},
+  hover: {},
+  listingHover: {}
 }
 
 export default function (state = initialState, action) {
@@ -10,6 +12,10 @@ export default function (state = initialState, action) {
       return {...state, markers: action.markers}
     case 'GET_LISTING':
       return {...state, currentListing: action.establishment}
+    case 'ACTIVE_HOVER':
+      return {...state, hover: action.hover}
+    case 'ACTIVE_LISTING':
+      return {...state, listingHover: action.listingHover}
     default:
       return state
   }

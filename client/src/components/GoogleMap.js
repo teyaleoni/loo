@@ -2,9 +2,31 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { connect } from 'react-redux'
  /* import action */
-import { getGoogleMarkers } from '../actions/looActions'
- 
-const Markers = ({ image }) => <img src={image} height="45" width="45"/>;
+import { getGoogleMarkers, activeHover } from '../actions/looActions'
+import '../styles/googlemap.css'
+
+class Marker extends Component {
+  handleMouseOver = (e) => {
+    // console.log(this.props.id) (checks if it works)
+    activeHover(this.props.id)
+  }
+
+  handleMouseOut = (e) => {
+    activeHover({})
+}
+  render() {
+    return (
+      <img  
+        className={this.props.className}
+        src={this.props.image} 
+        height="45" 
+        width="45"
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
+      />
+    )
+  }
+}
  
 class GoogleMap extends Component {
   /* action */
@@ -26,21 +48,23 @@ class GoogleMap extends Component {
 
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '621px', width: '65%' }}>
+      <div style={{ height: '638px', width: '65%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyAVJoGr5pyaGNsc0XpbOCYGB3EfKjxXuc4' }}
           defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
+          defaultZoom={this.props.zoom} >
         
-          {console.log(this.props.markers) /* This was empty so this is a server error*/ } 
+
             {this.props.markers.map(( marker, i )=> {
               /*Put the <Marker> in the map instead of outside*/
-              return <Markers 
+              console.log(this.props.listingHover === marker.id);
+              return <Marker 
                 lat={marker.latitude}
                 lng={marker.longitude}
                 image={'/icon.png'}
-                key={marker + i} />
+                key={marker + i}
+                id={marker.id} 
+                className={ this.props.listingHover === marker.id ? "marker markerHover": "marker" } />
             })}
 
           
@@ -53,7 +77,8 @@ class GoogleMap extends Component {
 //This connects your component to your reducer
 function mapStateToProps(appState) {
   return {
-    markers: appState.looReducer.markers
+    markers: appState.looReducer.markers,
+    listingHover: appState.looReducer.listingHover
   }
 }
  

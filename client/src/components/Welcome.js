@@ -7,7 +7,7 @@ class Home extends Component {
         return(
             <div className="welcomeOuterContainer">
                 <div className="welcomeContainer">
-                    <img id="loo" src="/Loo.png" />
+                    <img id="loo" src="/lo.png" />
                 </div>
                 <Link to = "./MainMap" id="goTo"><p>Go to map</p></Link>
             </div>
