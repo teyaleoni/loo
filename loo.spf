@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>Loo</string>
+			<key>host</key>
+			<string>localhost</string>
+			<key>name</key>
+			<string>localhost</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPSocketConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGOTpYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDE2VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClJpZNIeHy0uXxAPTlNN
+			dXRhYmxlU3RyaW5noy0vMFhOU1N0cmluZ1hOU09iamVjdNIeHzIz
+			Xk5TTXV0YWJsZUFycmF5ozI0NVdOU0FycmF5WE5TT2JqZWN00h4f
+			IjeiIjhYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLROzxUZGF0
+			YYABAAgAEQAaACMALQAyADcARQBLAFIAWgBlAGwAcAByAHQAdgB6
+			AHwAfgCAAIIAhwCMAJEAugDBAMIAwwDFAMoA1QDeAPQA+AEFAQ4B
+			EwEVARcBGQEeASgBKgEtATIBRAFIAVEBWgFfAW4BcgF6AYMBiAGL
+			AZQBpgGpAa4AAAAAAAACAQAAAAAAAAA9AAAAAAAAAAAAAAAAAAAB
+			sA==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1048, 439}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>table</key>
+			<string>listings</string>
+			<key>view</key>
+			<string>SP_VIEW_STRUCTURE</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>truncate listings_features_link</string>
+		<string>truncate table listings</string>
+		<string>select id from categories where slug = 'community'</string>
+		<string>INSERT INTO listings (img, category_id, listing_name, description) VALUES (dasda, 1, dajsnd,asdlnsjlfncaljkncnsalc.aljknclasnlcfafads. )</string>
+		<string>select * from listings where category_id = 3</string>
+		<string>select * from listings where category_id 3</string>
+		<string>select * from listings</string>
+		<string>-- Find the first 10 sorted alphabetically
+
+SELECT movies.id, movies.title, movies.genres
+FROM movies
+ORDER BY movies.title
+LIMIT 10</string>
+		<string>-- Find the id (only that column) of the movie Made in America (1993)
+
+SELECT movies.id
+FROM movies
+WHERE movies.title = 'Made in America (1993)'</string>
+		<string>SELECT movies.id, movies.title, movies.genres
+FROM movies 
+WHERE movies.id = 485</string>
+		<string>SELECT movies.id, movies.title
+FROM movies
+LIMIT 10</string>
+		<string>-- Select all columns and rows from the movies table
+-- Select only the title and id of the first 10 rows
+-- Find the movie with the id of 485
+-- Find the id (only that column) of the movie Made in America (1993)
+-- Find the first 10 sorted alphabetically
+-- Find all movies from 2002
+-- Find out what year the Godfather came out
+-- Without using joins find all the comedies
+-- Find all comedies in the year 2000
+-- Find any movies that are about death and are a comedy
+-- Find any movies from either 2001 or 2002 with a title containing super
+-- Create a new table called actors (We are going to pretend the actor can only play in one movie). The table should include name, character name, foreign key to movies and date of birth at least plus an id field.
+-- Pick 3 movies and create insert statements for 10 actors each. You should use the multi value insert statements
+-- Create a new column in the movie table to hold the MPAA rating. UPDATE 5 different movies to their correct rating
+
+SELECT movies.id, movies.title, movies.genres
+FROM movies</string>
+		<string>-- Select all columns and rows from the movies table
+-- Select only the title and id of the first 10 rows
+-- Find the movie with the id of 485
+-- Find the id (only that column) of the movie Made in America (1993)
+-- Find the first 10 sorted alphabetically
+-- Find all movies from 2002
+-- Find out what year the Godfather came out
+-- Without using joins find all the comedies
+-- Find all comedies in the year 2000
+-- Find any movies that are about death and are a comedy
+-- Find any movies from either 2001 or 2002 with a title containing super
+-- Create a new table called actors (We are going to pretend the actor can only play in one movie). The table should include name, character name, foreign key to movies and date of birth at least plus an id field.
+-- Pick 3 movies and create insert statements for 10 actors each. You should use the multi value insert statements
+-- Create a new column in the movie table to hold the MPAA rating. UPDATE 5 different movies to their correct rating
+
+SELECT movies.id, movies.title, movies.genres
+FROM movies
+WHERE movies</string>
+		<string>-- Select all columns and rows from the movies table
+-- Select only the title and id of the first 10 rows
+-- Find the movie with the id of 485
+-- Find the id (only that column) of the movie Made in America (1993)
+-- Find the first 10 sorted alphabetically
+-- Find all movies from 2002
+-- Find out what year the Godfather came out
+-- Without using joins find all the comedies
+-- Find all comedies in the year 2000
+-- Find any movies that are about death and are a comedy
+-- Find any movies from either 2001 or 2002 with a title containing super
+-- Create a new table called actors (We are going to pretend the actor can only play in one movie). The table should include name, character name, foreign key to movies and date of birth at least plus an id field.
+-- Pick 3 movies and create insert statements for 10 actors each. You should use the multi value insert statements
+-- Create a new column in the movie table to hold the MPAA rating. UPDATE 5 different movies to their correct rating
+
+SELECT movies.id, movies.title, movies.genre
+FROM movies
+WHERE movies</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.21</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
