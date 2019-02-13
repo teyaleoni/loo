@@ -7,6 +7,7 @@ import Welcome from './Welcome'
 import GoogleMap from './GoogleMap'
 import MainMap from './MainMap'
 import Listing from './Listing'
+import NewComment from './NewComment'
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/GoogleMap" exact component={GoogleMap} />
             <Route path="/MainMap" exact component={MainMap} />
             <Route path="/listing/:id" exact component={Listing} />
+            <Route path="/listing/comment" exact component={NewComment} />
           </div>
         </Router>
       </Provider>

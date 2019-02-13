@@ -71,9 +71,9 @@
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>table</key>
-			<string>listings</string>
+			<string>comments</string>
 			<key>view</key>
-			<string>SP_VIEW_STRUCTURE</string>
+			<string>SP_VIEW_CUSTOMQUERY</string>
 			<key>windowVerticalDividerPosition</key>
 			<real>214</real>
 		</dict>
@@ -86,6 +86,11 @@
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>SELECT a.*, GROUP_CONCAT(c.br_comments SEPARATOR ', ') as comments
+  FROM listings a
+  LEFT JOIN listings_comments_link b ON a.id = b.listing_id
+  LEFT JOIN comments c ON b.feature_id = feat.id
+  GROUP BY a.id</string>
 		<string>truncate listings_features_link</string>
 		<string>truncate table listings</string>
 		<string>select id from categories where slug = 'community'</string>
