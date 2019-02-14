@@ -37,8 +37,8 @@ class GoogleMap extends Component {
 
   static defaultProps = {
     center: {
-      lat: 36.1684266,
-      lng: -115.132405
+      lat: 36.158522,
+      lng: -115.152391
     },
     zoom: 14
   };
@@ -59,8 +59,8 @@ class GoogleMap extends Component {
               /*Put the <Marker> in the map instead of outside*/
               console.log(this.props.listingHover === marker.id);
               return <Marker 
-                lat={marker.latitude}
-                lng={marker.longitude}
+                lat={marker.location.lat}
+                lng={marker.location.lng}
                 image={'/icon.png'}
                 key={marker + i}
                 id={marker.id} 
@@ -76,6 +76,7 @@ class GoogleMap extends Component {
 
 //This connects your component to your reducer
 function mapStateToProps(appState) {
+  console.log(appState)
   return {
     markers: appState.looReducer.markers,
     listingHover: appState.looReducer.listingHover
