@@ -6,10 +6,9 @@ class Home extends Component {
     render() {
         return(
             <div className="welcomeOuterContainer">
-                <div className="welcomeContainer">
-                    <img id="loo" src="/lo.png" />
-                </div>
-                <Link to = "./MainMap" id="goTo"><p>Go to map</p></Link>
+                <div class='pin bounce'></div>
+                <div class='pulse'></div>
+            <Link to = "./MainMap" id="goTo"><p>Find a nearby restroom...</p></Link>
             </div>
         )
     }
