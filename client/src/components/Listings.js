@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getGoogleMarkers, activeListing } from '../actions/looActions'
+import { getGoogleMarkers, activeListing, getListing } from '../actions/looActions'
 import '../styles/mainmap.css'
 import { Link} from 'react-router-dom'
 

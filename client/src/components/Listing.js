@@ -31,7 +31,7 @@ class Listing extends Component {
                 <div id="addy1"><h3>Address</h3><p id="addy2">{this.props.current.address}</p></div>
                 <div id="hours1"><h3>Hours</h3><p id="hours2">{this.props.current.hours}</p></div>
                 <div id="feats1"><h3>Bathroom Description</h3><p id="feats2">{this.props.current.features}</p></div>
-                <button id="butt" onClick={this.handleClick}><p>Go Back</p></button>
+                <div id="buttbox"><button id="butt" onClick={this.handleClick}><p>Go Back</p></button></div>
                 </div>
             </div>
         </div>
