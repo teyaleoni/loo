@@ -18,7 +18,7 @@ class App extends Component {
             <Route path="/" exact component={Welcome} />
             <Route path="/GoogleMap" exact component={GoogleMap} />
             <Route path="/MainMap" exact component={MainMap} />
-            <Route path="/listing/:id" exact component={Listing} />
+            <Route path="/listing/:place_id" exact component={Listing} />
             <Route path="/listing/comment" exact component={NewComment} />
           </div>
         </Router>
