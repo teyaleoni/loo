@@ -37,12 +37,12 @@ class Listings extends Component {
             <div id="room">
                 {this.props.markers.map(listing => (
                 <Link key=
-                  {'listing' + listing.id} to={`/listing/${listing.id}`}>
+                  {'listing' + listing.id} to={`/listing/${listing.place_id}`}>
                     <div className={ this.props.hover === listing.id ? "listingBox listingBoxHover": "listingBox" } 
                       onMouseOver={(e) => this.handleMouseOver(e, listing.id)}
                       onMouseOut={(e) => this.handleMouseOut(e, listing.id)} >
                         <p id="name3">{listing.name}</p>
-                        <p id="addy3">{listing.address}</p>
+                        <p id="addy3">{listing.formatted_address}</p>
                     </div>
                 </Link>
                 ))}
