@@ -51,7 +51,7 @@ header, footer {
 
 .listingBox:hover, .listingBoxHover {
     cursor: pointer;
-    background-color: gainsboro;    
+    background-color: rgb(240, 240, 240);    
 }
 
 a {
