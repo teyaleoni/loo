@@ -39,6 +39,7 @@ header, footer {
 }
 
 .listingBox{
+    display: flex;
     margin: 10px;
     border: 1px solid darkgray;
     font-size: 15px;
@@ -47,11 +48,9 @@ header, footer {
     
 }
 
-
-
 .listingBox:hover, .listingBoxHover {
     cursor: pointer;
-    background-color: rgb(240, 240, 240);    
+    background-color: rgb(230, 230, 230);    
 }
 
 a {

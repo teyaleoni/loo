@@ -30,7 +30,6 @@ export function getGoogleMarkers() {
 
 export function getListing(place_id) {
   axios.get('/listing/'+ place_id).then(resp => {
-    console.log("establishment", resp)
     store.dispatch({
       type: 'GET_LISTING', 
       establishment: resp.data

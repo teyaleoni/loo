@@ -38,7 +38,7 @@ html {box-sizing:border-box;}
 
 #name3 {
     font-size: 20px;
-    color: darkblue;
+    color: darkslategray;
 
 }
 
@@ -72,3 +72,9 @@ html {box-sizing:border-box;}
     border-radius: 5px;
 }
 
+#toilet-icon {
+    width: 28px;
+    height: 35px;
+    margin-top: 15px;
+    margin-left: 10px;
+}

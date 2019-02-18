@@ -31,8 +31,9 @@ class Listings extends Component {
                       className={ this.props.hover === listing.id ? "listingBox listingBoxHover": "listingBox" } 
                       onMouseOver={(e) => this.handleMouseOver(e, listing.id)}
                       onMouseOut={(e) => this.handleMouseOut(e, listing.id)} >
-                        <p id="name3">{listing.name}</p>
-                        <p id="addy3">{listing.formatted_address}</p>
+                      <img id="toilet-icon" src={'toilet-icon.png'} />
+                      <p id="name3">{listing.name}</p>
+                      <p id="addy3">{this.props.listing.details[listing.place.id]}</p>
                     </div>
                 </Link>
                 ))}
@@ -46,6 +47,7 @@ function mapStateToProps(appState) {
   return {
     markers: appState.looReducer.markers,
     hover: appState.looReducer.hover,
+    listing: appState.looReducer.listing
    }
 }
 
