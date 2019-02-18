@@ -1,5 +1,8 @@
 const initialState = {
   markers: [],
+  listing: {
+    details: {}
+  },
   currentListing: {
     photos: [{}],
     opening_hours: {
@@ -26,6 +29,12 @@ export default function (state = initialState, action) {
       return {...state, hover: action.hover}
     case 'ACTIVE_LISTING':
       return {...state, listingHover: action.listingHover}
+    case 'GET_LISTING_FOR_LISTINGS':
+      const update = {}
+      update[action.establishment.place_id] = action.establishment.formatted_address
+
+      const newDetails = {...state.listing.details, ...update};
+      return {...state, listing: {details: newDetails}}      
     default:
       return state
   }

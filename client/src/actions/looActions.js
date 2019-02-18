@@ -19,7 +19,7 @@ export function activeListing(listing_id) {
 }
 
 export function getGoogleMarkers() {
-  axios.get('/listings').then(resp => {
+  return axios.get('/listings').then(resp => {
     store.dispatch({
       type: 'GET_MARKERS', 
       markers: resp.data
@@ -27,10 +27,17 @@ export function getGoogleMarkers() {
   })
 }
 
+export function getListingDetails(place_id) {
+  axios.get('/listing/'+ place_id).then(resp => {
+    store.dispatch({
+      type: 'GET_LISTING_FOR_LISTINGS', 
+      establishment: resp.data
+    })
+  })
+}
 
 export function getListing(place_id) {
   axios.get('/listing/'+ place_id).then(resp => {
-    console.log("establishment", resp)
     store.dispatch({
       type: 'GET_LISTING', 
       establishment: resp.data
