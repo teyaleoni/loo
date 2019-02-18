@@ -4,6 +4,7 @@ html {box-sizing:border-box;}
 .ListingContainer {
     background-image: linear-gradient(lightgray,rgb(80, 219, 223));
     background-size: cover;  
+    overflow: scroll;
 }
 
 #body1{

@@ -11,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "concurrently": "^4.1.0",
     "google-map-react": "^1.1.2",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "react-scroll": "^1.7.11"
   },
   "boilerplate": {
     "name": "react-server-boilerplate",

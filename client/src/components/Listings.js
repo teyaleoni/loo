@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getGoogleMarkers, activeListing, getListingDetails } from '../actions/looActions'
 import '../styles/mainmap.css'
+<<<<<<< HEAD
 import { Link} from 'react-router-dom'
 import { join } from 'path';
+=======
+import { Link } from 'react-router-dom'
+>>>>>>> 5018bdac951cfc8617c62ae2fc242fefae48e9eb
 
 class Listings extends Component {
   componentDidMount() {
@@ -14,20 +18,8 @@ class Listings extends Component {
     });
   }
 
-  componentWillUpdate() {
-    var node = this.refs.listings
-    this.shouldScrollBottom = node.scrollTop + node.offsetHeight === node.scrollHeight + 4
-  }
-  
-  componentDidUpdate() {
-    if (this.shouldScrollBottom) {
-        var node = this.refs.listings
-        node.scrollTop = node.scrollHeight
-    }
-  }
 
   handleMouseOver = (e, listing_id) => {
-    // console.log(this.props.id) 
     activeListing(listing_id)
   }
 
@@ -38,11 +30,19 @@ class Listings extends Component {
   render() {
 
     return (
-        <div id="roomwrap" ref="listings">
+        <div id="roomwrap" >
             <div id="room">
                 {this.props.markers.map(listing => (
+<<<<<<< HEAD
                 <Link key={'listing' + listing.id} to={`/listing/${listing.place_id}`}>
                     <div className={ this.props.hover === listing.id ? "listingBox listingBoxHover": "listingBox" } 
+=======
+                <Link key=
+                  {'listing' + listing.id} to={`/listing/${listing.place_id}`}>
+                    <div id={listing.id}
+                      ref = { this.props.hover === listing.id ? "shouldScroll": "" } 
+                      className={ this.props.hover === listing.id ? "listingBox listingBoxHover": "listingBox" } 
+>>>>>>> 5018bdac951cfc8617c62ae2fc242fefae48e9eb
                       onMouseOver={(e) => this.handleMouseOver(e, listing.id)}
                       onMouseOut={(e) => this.handleMouseOut(e, listing.id)} >
                         <p id="name3">{listing.name}</p>
