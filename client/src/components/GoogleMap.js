@@ -5,10 +5,12 @@ import { connect } from 'react-redux'
 import { getGoogleMarkers, activeHover } from '../actions/looActions'
 import '../styles/googlemap.css'
 
+
 class Marker extends Component {
   handleMouseOver = (e) => {
     // console.log(this.props.id) (checks if it works)
     activeHover(this.props.id)
+    document.getElementById(this.props.id).scrollIntoView()
   }
 
   handleMouseOut = (e) => {
@@ -19,8 +21,8 @@ class Marker extends Component {
       <img  
         className={this.props.className}
         src={this.props.image} 
-        height="45" 
-        width="45"
+        height="40" 
+        width="37"
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
       />
@@ -61,10 +63,11 @@ class GoogleMap extends Component {
               return <Marker 
                 lat={marker.location.lat}
                 lng={marker.location.lng}
-                image={'/icon.png'}
+                image={'/marker.png'}
                 key={marker + i}
                 id={marker.id} 
-                className={ this.props.listingHover === marker.id ? "marker markerHover": "marker" } />
+                className={ this.props.listingHover === marker.id ? "marker markerHover": "marker" } 
+                href={'/GoogleMap' + marker.id}/>
             })}
 
           
