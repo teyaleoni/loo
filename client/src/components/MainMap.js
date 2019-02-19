@@ -7,14 +7,14 @@ import '../styles/mainmap.css'
 
 class MainMap extends Component {
     render() {
-        return(
+        return (
             <div className="MainMapContainer">
                 <header id="header">Loo</header>
-                    <div className="Content">
-                        <GoogleMap />
-                        <Listings />
-                    </div>
-                <footer></footer>   
+                <div className="Content">
+                    <GoogleMap />
+                    <Listings />
+                </div>
+                <footer></footer>
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { connect } from 'react-redux'
- /* import action */
+/* import action */
 import { getGoogleMarkers, activeHover } from '../actions/looActions'
 import '../styles/googlemap.css'
 
@@ -15,13 +15,13 @@ class Marker extends Component {
 
   handleMouseOut = (e) => {
     activeHover({})
-}
+  }
   render() {
     return (
-      <img  
+      <img
         className={this.props.className}
-        src={this.props.image} 
-        height="40" 
+        src={this.props.image}
+        height="40"
         width="37"
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
@@ -29,13 +29,13 @@ class Marker extends Component {
     )
   }
 }
- 
+
 class GoogleMap extends Component {
   /* action */
   componentDidMount() {
     getGoogleMarkers()
   }
-  
+
 
   static defaultProps = {
     center: {
@@ -45,7 +45,7 @@ class GoogleMap extends Component {
     zoom: 14
   };
 
- 
+
   render() {
 
     return (
@@ -55,22 +55,22 @@ class GoogleMap extends Component {
           bootstrapURLKeys={{ key: 'AIzaSyAVJoGr5pyaGNsc0XpbOCYGB3EfKjxXuc4' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom} >
-        
 
-            {this.props.markers.map(( marker, i )=> {
-              /*Put the <Marker> in the map instead of outside*/
-              console.log(this.props.listingHover === marker.id);
-              return <Marker 
-                lat={marker.location.lat}
-                lng={marker.location.lng}
-                image={'/marker.png'}
-                key={marker + i}
-                id={marker.id} 
-                className={ this.props.listingHover === marker.id ? "marker markerHover": "marker" } 
-                href={'/GoogleMap' + marker.id}/>
-            })}
 
-          
+          {this.props.markers.map((marker, i) => {
+            /*Put the <Marker> in the map instead of outside*/
+            console.log(this.props.listingHover === marker.id);
+            return <Marker
+              lat={marker.location.lat}
+              lng={marker.location.lng}
+              image={'/marker.png'}
+              key={marker + i}
+              id={marker.id}
+              className={this.props.listingHover === marker.id ? "marker markerHover" : "marker"}
+              href={'/GoogleMap' + marker.id} />
+          })}
+
+
         </GoogleMapReact>
       </div>
     );
@@ -85,5 +85,5 @@ function mapStateToProps(appState) {
     listingHover: appState.looReducer.listingHover
   }
 }
- 
+
 export default connect(mapStateToProps)(GoogleMap);
