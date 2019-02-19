@@ -33,13 +33,12 @@ header, footer {
     height: 638px;
 }
 
-#room{
+#room { 
     height:100%;
     padding: 10px;
 }
 
-.listingBox{
-    display: flex;
+.listingBox {
     margin: 10px;
     border: 1px solid darkgray;
     font-size: 15px;

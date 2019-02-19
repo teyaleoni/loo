@@ -31,14 +31,19 @@ const conn = require('../utils/db')
 //     })
 // })
 
-var listings = []
-getGoogleResults()
+let listings = []
+const companies = ['Starbucks', 'Mcdonald\'s', 'Container Park', 'In n Out', 'Walgreens Drug Store', 'Smart and Final', '7-eleven', 'Carl\'s Jr', 'Savers', 'Fremont Street Experience', 'Chevron', 'Las Vegas Library', 'Circle K Convenience Store', 'CVS Convenience Store','Smith\'s Food and Drug', 'Taco Bell', 'Albertsons', 'Dunkin\' Donuts', 'Burger King', 'ARCO']
 
-  function getGoogleResults(nextPageToken=""){
+for (const company of companies) {
+  getGoogleResults(company)
+}
+
+  function getGoogleResults(keyword, nextPageToken=""){
     return new Promise ((res,rej) => {
       const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" +
       "location=36.158522,-115.152391" +
-      "&radius=1500" +
+      "&radius=2000" +
+      `&keyword=${keyword}` + 
       "&key=AIzaSyAxQF4uwgD1M4D0W7_fj0zQaCppeHaTtC0" +
       `&pagetoken=${nextPageToken}`;
 
@@ -52,10 +57,11 @@ getGoogleResults()
           place_id: datum.place_id,
         }))
         listings = listings.concat(listings2)
+        listings.sort()
       }
       if(resp.data.next_page_token){
         setTimeout(() => {
-          return getGoogleResults(resp.data.next_page_token).then(res).catch(rej)
+          return getGoogleResults(keyword, resp.data.next_page_token).then(res).catch(rej)
         }, 3000);                             
       }
         return res()
