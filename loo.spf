@@ -41,8 +41,6 @@
 		<dict>
 			<key>connectionEncoding</key>
 			<string>utf8</string>
-			<key>contentFilter</key>
-			<dict/>
 			<key>contentPageNumber</key>
 			<integer>1</integer>
 			<key>contentSelection</key>
@@ -67,13 +65,21 @@
 			<key>contentSortColIsAsc</key>
 			<true/>
 			<key>contentViewport</key>
-			<string>{{0, 0}, {1048, 439}}</string>
+			<string>{{0, 0}, {1055, 439}}</string>
 			<key>isToolbarVisible</key>
 			<true/>
+			<key>queries</key>
+			<string>INSERT INTO comments (br_comment) 
+VALUES (sdagfsfg);
+
+SELECT a.*
+  FROM comments a
+  WHERE place_id = ChIJPxI0X4TDyIARkheCu7sXfMw
+</string>
 			<key>table</key>
-			<string>comments</string>
+			<string>features</string>
 			<key>view</key>
-			<string>SP_VIEW_CUSTOMQUERY</string>
+			<string>SP_VIEW_STRUCTURE</string>
 			<key>windowVerticalDividerPosition</key>
 			<real>214</real>
 		</dict>
@@ -86,11 +92,21 @@
 	<array/>
 	<key>queryHistory</key>
 	<array>
-		<string>SELECT a.*, GROUP_CONCAT(c.br_comments SEPARATOR ', ') as comments
-  FROM listings a
-  LEFT JOIN listings_comments_link b ON a.id = b.listing_id
-  LEFT JOIN comments c ON b.feature_id = feat.id
-  GROUP BY a.id</string>
+		<string>SELECT a.*
+  FROM comments a
+  WHERE place_id = ChIJPxI0X4TDyIARkheCu7sXfMw</string>
+		<string>SELECT a.*
+  FROM comments a
+  WHERE place_id = (ChIJPxI0X4TDyIARkheCu7sXfMw)</string>
+		<string>INSERT INTO comments (br_comment) 
+VALUES (sdagfsfg)</string>
+		<string>INSERT INTO comments (br_comment) 
+VALUES (sdagfsfgdsfgasfg)</string>
+		<string>INSERT INTO comments (id, br_comment) 
+VALUES (1, sdagfsfgdsfgasfg)</string>
+		<string>INSERT INTO comments (br_comment) VALUES sdagfsfgdsfgasfg</string>
+		<string>INSERT INTO comments (br_comment) VALUES (ksdbfjkdfbfrubfjbjbwe)</string>
+		<string>truncate table comments</string>
 		<string>truncate listings_features_link</string>
 		<string>truncate table listings</string>
 		<string>select id from categories where slug = 'community'</string>
@@ -132,42 +148,6 @@ LIMIT 10</string>
 
 SELECT movies.id, movies.title, movies.genres
 FROM movies</string>
-		<string>-- Select all columns and rows from the movies table
--- Select only the title and id of the first 10 rows
--- Find the movie with the id of 485
--- Find the id (only that column) of the movie Made in America (1993)
--- Find the first 10 sorted alphabetically
--- Find all movies from 2002
--- Find out what year the Godfather came out
--- Without using joins find all the comedies
--- Find all comedies in the year 2000
--- Find any movies that are about death and are a comedy
--- Find any movies from either 2001 or 2002 with a title containing super
--- Create a new table called actors (We are going to pretend the actor can only play in one movie). The table should include name, character name, foreign key to movies and date of birth at least plus an id field.
--- Pick 3 movies and create insert statements for 10 actors each. You should use the multi value insert statements
--- Create a new column in the movie table to hold the MPAA rating. UPDATE 5 different movies to their correct rating
-
-SELECT movies.id, movies.title, movies.genres
-FROM movies
-WHERE movies</string>
-		<string>-- Select all columns and rows from the movies table
--- Select only the title and id of the first 10 rows
--- Find the movie with the id of 485
--- Find the id (only that column) of the movie Made in America (1993)
--- Find the first 10 sorted alphabetically
--- Find all movies from 2002
--- Find out what year the Godfather came out
--- Without using joins find all the comedies
--- Find all comedies in the year 2000
--- Find any movies that are about death and are a comedy
--- Find any movies from either 2001 or 2002 with a title containing super
--- Create a new table called actors (We are going to pretend the actor can only play in one movie). The table should include name, character name, foreign key to movies and date of birth at least plus an id field.
--- Pick 3 movies and create insert statements for 10 actors each. You should use the multi value insert statements
--- Create a new column in the movie table to hold the MPAA rating. UPDATE 5 different movies to their correct rating
-
-SELECT movies.id, movies.title, movies.genre
-FROM movies
-WHERE movies</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>

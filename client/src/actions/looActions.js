@@ -44,3 +44,16 @@ export function getListing(place_id) {
     })
   })
 }
+
+export function getComments(place_id){
+  axios.get('/comments/'+ place_id).then(resp =>{
+    store.dispatch({
+      type: "GET_COMMENTS",
+      comments: resp.data
+    })
+  })
+}
+
+export function storeComment(place_id, br_comment){
+  axios.post('/comment',{place_id, br_comment});
+}
