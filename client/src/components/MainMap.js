@@ -14,7 +14,7 @@ class MainMap extends Component {
                     <GoogleMap />
                     <Listings />
                 </div>
-                <footer></footer>
+                <footer id="footer">Your local bathroom finder</footer>
             </div>
         )
     }

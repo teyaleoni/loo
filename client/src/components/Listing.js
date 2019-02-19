@@ -18,7 +18,9 @@ class Listing extends Component {
   }
 
   handleSubmit = (e) => {
+    e.preventDefault()
     storeComment(this.props.match.params.place_id, this.state.br_comment)
+      getComments(this.props.match.params.place_id)
   }
 
   handleChange = (e) => {
@@ -36,10 +38,10 @@ class Listing extends Component {
     return (
       <div className="ListingContainer">
         <div id="body1">
-          <div id="img1"><img src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400` +
+          <div id="photo1"><img src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400` +
             `&key=AIzaSyAxQF4uwgD1M4D0W7_fj0zQaCppeHaTtC0` +
             `&photoreference=${this.props.current.photos[0].photo_reference}`}
-            id="img2"
+            id="photo2"
             alt="picture of establishment" />
           </div>
           <div id="body2">

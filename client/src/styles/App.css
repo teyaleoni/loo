@@ -16,12 +16,12 @@ html {box-sizing:border-box;}
     font-family: ‘abel’, sans-serif;
 }
 
-#img1 {
+#photo1 {
     padding: 20px;
     text-align: center;
 }
 
-#img2 {
+#photo2 {
     width: 400px;
     border: 2px solid lightgray;
     border-radius: 15px;

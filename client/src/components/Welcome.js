@@ -6,8 +6,8 @@ class Home extends Component {
     render() {
         return (
             <div className="welcomeOuterContainer">
-                <div class='pin bounce'></div>
-                <div class='pulse'></div>
+                <div className='pin bounce'></div>
+                <div className='pulse'></div>
                 <Link to="./MainMap" id="goTo"><p>Find a nearby restroom...</p></Link>
             </div>
         )

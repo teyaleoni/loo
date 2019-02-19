@@ -4,18 +4,26 @@ html {box-sizing:border-box;}
 
 
 body {
+    height: 100%;
     background-image: url("../images/home.png");
-    background-repeat: no-repeat;
+    background-repeat: none;
+    background-position: center;
     background-size: cover;
+    max-width: 100%;
+    
+}
+
+html {
+  height: 100%;
+  max-width: 100%;
 }
 
 
-
 #goTo {
-    font-size: 35px;
+    font-size: 2vw;
     position: absolute;
-    top:400px;
-    left: 100px;
+    top:53%;
+    left: 7%;
     color: white;
     text-decoration: none;
     font-family: 'abel', sans-serif;
@@ -25,25 +33,25 @@ body {
 
   
   .pin {
-    width: 75px;
-    height: 75px;
+    width: 5%;
+    height: 10%;
     border-radius: 50% 50% 50% 0;
     background: #ee593b;
     position: absolute;
     transform: rotate(-45deg);
-    right: 21%;
+    right: 19%;
     top: 25%;
-    margin: -20px 0 0 -20px;
+    margin: -1% 0 0 -1%;
   }
   .pin:after {
     content: "";
-    width: 30px;
-    height: 30px;
-    margin: 8px 0 0 8px;
+    width: 40%;
+    height: 40%;
+    margin: 8% 0 0 8%;
     background: white;
     position: absolute;
-    top: 19%;
-    right:30%;
+    top: 25%;
+    right:32%;
     border-radius: 50%;
   }
   
@@ -56,22 +64,23 @@ body {
   .pulse {
     background: #d6d4d4;
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
+    height: 2%;
+    width: 3%;
     position: absolute;
-    right: 23%;
+    right: 20%;
     top: 35%;
-    margin: 11px 0px 0px -12px;
+    margin: 1% 0% 0% 0%;
     transform: rotateX(55deg);
     z-index: -2;
   }
   .pulse:after {
     content: "";
     border-radius: 50%;
-    height: 40px;
-    width: 40px;
+    height: 95%;
+    width: 100%;
     position: absolute;
-    top:35%;
+    top:50%;
+    right: 1%;
     margin: -13px 0 0 -13px;
     animation: pulsate 1s ease-out;
     animation-iteration-count: infinite;
@@ -79,7 +88,6 @@ body {
     box-shadow: 0 0 1px 2px white;
     animation-delay: 1.1s;
   }
-  
   @keyframes pulsate {
     0% {
       transform: scale(0.1, 0.1);

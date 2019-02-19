@@ -25,17 +25,33 @@ class Marker extends Component {
         width="37"
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
+        alt={'marker'}
       />
     )
   }
 }
 
 class GoogleMap extends Component {
+  state = {
+    height: window.innerHeight - 110
+  }
+
   /* action */
   componentDidMount() {
+    window.addEventListener('resize', this.changeHeight)
+
     getGoogleMarkers()
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.changeHeight)
+  }
+
+  changeHeight = (e) => {
+    this.setState({
+      height: window.innerHeight - 110
+    })
+  }
 
   static defaultProps = {
     center: {
@@ -50,7 +66,7 @@ class GoogleMap extends Component {
 
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '645px', width: '65%' }}>
+      <div style={{ height: this.state.height, width: '65%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyAVJoGr5pyaGNsc0XpbOCYGB3EfKjxXuc4' }}
           defaultCenter={this.props.center}
@@ -59,7 +75,6 @@ class GoogleMap extends Component {
 
           {this.props.markers.map((marker, i) => {
             /*Put the <Marker> in the map instead of outside*/
-            console.log(this.props.listingHover === marker.id);
             return <Marker
               lat={marker.location.lat}
               lng={marker.location.lng}

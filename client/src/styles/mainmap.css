@@ -4,18 +4,16 @@ html {box-sizing:border-box;}
 
 .MainMapContainer {
     display: flex;
-    min-height: 100%;
     flex-direction: column;
     font-family: 'abel', sans-serif;
     background-color: white;
+    height: 100%;
+    width: 100%;
 }
 
 header, footer {
     height: 55px;
-    background-color: rgb(80, 219, 223)
-}
-
-#header {
+    background-color: rgb(80, 219, 223);
     text-align: center;
     color: white;
     font-size: 30px;
@@ -30,10 +28,10 @@ header, footer {
 #roomwrap {
     overflow:auto;
     width: 35%;
-    height: 638px;
+
 }
 
-#room { 
+.room { 
     height:100%;
     padding: 10px;
 }
