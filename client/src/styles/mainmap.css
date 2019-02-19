@@ -33,12 +33,12 @@ header, footer {
     height: 638px;
 }
 
-#room{
+#room { 
     height:100%;
     padding: 10px;
 }
 
-.listingBox{
+.listingBox {
     margin: 10px;
     border: 1px solid darkgray;
     font-size: 15px;
@@ -47,11 +47,9 @@ header, footer {
     
 }
 
-
-
 .listingBox:hover, .listingBoxHover {
     cursor: pointer;
-    background-color: rgb(240, 240, 240);    
+    background-color: rgb(230, 230, 230);    
 }
 
 a {
