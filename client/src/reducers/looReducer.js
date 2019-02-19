@@ -10,7 +10,8 @@ const initialState = {
     }
   },
   hover: {},
-  listingHover: {}
+  listingHover: {},
+  comments: []
 }
 
 export default function (state = initialState, action) {
@@ -34,7 +35,9 @@ export default function (state = initialState, action) {
       update[action.establishment.place_id] = action.establishment.formatted_address
 
       const newDetails = {...state.listing.details, ...update};
-      return {...state, listing: {details: newDetails}}      
+      return {...state, listing: {details: newDetails}}
+    case 'GET_COMMENTS':
+      return {...state, comments: action.comments}      
     default:
       return state
   }

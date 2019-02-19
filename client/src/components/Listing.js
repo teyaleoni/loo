@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getListing } from '../actions/looActions'
+import { getListing, getComments, storeComment } from '../actions/looActions'
 import '../styles/App.css'
 
 class Listing extends Component {
 
-
   componentDidMount() {
     console.log(this.props);
      getListing(this.props.match.params.place_id)
+     getComments(this.props.match.params.place_id)
     }
 
   componentWillReceiveProps(newProps) {
@@ -17,9 +17,19 @@ class Listing extends Component {
     }
   }
 
+  handleSubmit = (e) => {
+    storeComment(this.props.match.params.place_id, this.state.br_comment)
+  }
+
+  handleChange =(e) => {
+      this.setState({
+          br_comment: e.target.value
+      })
+  }
+
+
   handleClick = e => {
     e.preventDefault()
-    this.props.history.goBack()
 }
 
   render() {
@@ -31,8 +41,23 @@ class Listing extends Component {
                 <div id="name1"><h3>Name</h3><p id="name2">{this.props.current.name}</p></div>
                 <div id="addy1"><h3>Address</h3><p id="addy2">{this.props.current.formatted_address}</p></div>
                 <div id="hours1"><h3>Hours</h3><p id="hours2">{this.props.current.opening_hours.weekday_text}</p></div>
-                <div id="feats1"><h3>Bathroom Description</h3><p id="feats2">{this.props.current.features}</p></div>
-                <div id="buttbox"><button id="butt" onClick={this.handleClick}><p>Go Back</p></button></div>
+                <div id="commentsbox">
+                  <h3>Comments</h3>
+                  <div id="commentsContainer">
+                    {this.props.comments.map(comments => (
+                    <p id="comments">{comments.br_comment}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <form onSubmit={this.handleSubmit}>
+                  <textarea onChange={this.handleChange}></textarea>
+                    <div id="bigbuttbox">
+                      <div className="buttbox"><button className="butt" type="submit"><p>Post Comment</p></button></div>
+                      <div className="buttbox"><button className="butt" onClick={this.handleClick}><p>Go Back</p></button></div>
+                    </div>
+                  </form>
+                  </div>
                 </div>
             </div>
         </div>
@@ -43,7 +68,8 @@ class Listing extends Component {
 function mapStateToProps(appState) {
   console.log(appState);
   return {
-      current: appState.looReducer.currentListing
+      current: appState.looReducer.currentListing,
+      comments: appState.looReducer.comments
    }
 }
 
