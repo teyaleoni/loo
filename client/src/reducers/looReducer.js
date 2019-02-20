@@ -4,7 +4,6 @@ const initialState = {
     details: {}
   },
   currentListing: {
-    photos: [{}],
     opening_hours: {
       weekday_text: []
     }

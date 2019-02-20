@@ -34,16 +34,24 @@ class Listing extends Component {
     this.props.history.goBack()
   }
 
+  render_photo() {
+    if (this.props.current.photos) {
+        return (<div id="photo1"><img src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400` +
+        `&key=AIzaSyAxQF4uwgD1M4D0W7_fj0zQaCppeHaTtC0` +
+        `&photoreference=${this.props.current.photos[0].photo_reference}`}
+        id="photo2"
+        alt="picture of establishment" />
+      </div>);
+    } else {
+      return (<div id="photo1"></div>);
+    }
+  }
+
   render() {
     return (
       <div className="ListingContainer">
         <div id="body1">
-          <div id="photo1"><img src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400` +
-            `&key=AIzaSyAxQF4uwgD1M4D0W7_fj0zQaCppeHaTtC0` +
-            `&photoreference=${this.props.current.photos[0].photo_reference}`}
-            id="photo2"
-            alt="picture of establishment" />
-          </div>
+          {this.render_photo()}
           <div id="body2">
             <div id="name1"><h3>Name</h3><p id="name2">{this.props.current.name}</p></div>
             <div id="addy1"><h3>Address</h3><p id="addy2">{this.props.current.formatted_address}</p></div>
@@ -54,8 +62,8 @@ class Listing extends Component {
                 <textarea onChange={this.handleChange} placeholder="Enter Comment Here"></textarea>
                 <div id="commentsContainer">
                   <ul>
-                    {this.props.comments.map(comments => (
-                      <li id="comments">{comments.br_comment}</li>
+                    {this.props.comments.map((comments, i ) => (
+                      <li id="comments">{comments.br_comment + i}</li>
                     ))}
                   </ul>
                 </div>
