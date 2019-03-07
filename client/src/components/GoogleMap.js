@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 /* import action */
 import { getGoogleMarkers, activeHover } from '../actions/looActions'
 import '../styles/googlemap.css'
+import {geolocated} from 'react-geolocated'
 
 
 class Marker extends Component {
@@ -35,12 +36,14 @@ class GoogleMap extends Component {
   state = {
     height: window.innerHeight - 110
   }
+  currentLocation = null;
 
   /* action */
   componentDidMount() {
     window.addEventListener('resize', this.changeHeight)
 
     getGoogleMarkers()
+    this.getCurrentLocation();
   }
 
   componentWillUnmount() {
@@ -53,6 +56,16 @@ class GoogleMap extends Component {
     })
   }
 
+  getCurrentLocation() {
+    fetch('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAmjIY1E4X_kqTBYDgngyXI5Q8npxmVSGU', {
+      method: 'POST'
+    }).then(r => r.json())
+      .then(({ location }) => {
+        this.currentLocation = location;
+      })
+      .catch(e => console.error(e))
+  }
+
   static defaultProps = {
     center: {
       lat: 36.158522,
@@ -63,13 +76,16 @@ class GoogleMap extends Component {
 
 
   render() {
+    if (!this.currentLocation) {
+      return (<div>Geolocation is loading...</div>);
+    }
 
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: this.state.height, width: '65%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyAVJoGr5pyaGNsc0XpbOCYGB3EfKjxXuc4' }}
-          defaultCenter={this.props.center}
+          bootstrapURLKeys={{ key: 'AIzaSyAmjIY1E4X_kqTBYDgngyXI5Q8npxmVSGU' }}
+          defaultCenter={this.currentLocation}
           defaultZoom={this.props.zoom} >
 
 
@@ -84,6 +100,15 @@ class GoogleMap extends Component {
               className={this.props.listingHover === marker.id ? "marker markerHover" : "marker"}
               href={'/GoogleMap' + marker.id} />
           })}
+          {
+            <Marker
+            lat={this.currentLocation.lat}
+            lng={this.currentLocation.lng}
+            image={'/marker.png'}
+            key='currnetLocation'
+            id='currentLocation' />
+          }
+          
 
 
         </GoogleMapReact>
@@ -101,4 +126,10 @@ function mapStateToProps(appState) {
   }
 }
 
-export default connect(mapStateToProps)(GoogleMap);
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: true,
+    timeout: 30000,
+  },
+  userDecisionTimeout: 10000,
+})(connect(mapStateToProps)(GoogleMap));

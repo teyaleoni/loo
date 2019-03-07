@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getListing, getComments, storeComment } from '../actions/looActions'
+import { getListing } from '../actions/looActions'
 import '../styles/App.css'
 
 class Listing extends Component {
@@ -8,7 +8,7 @@ class Listing extends Component {
   componentDidMount() {
     console.log(this.props);
     getListing(this.props.match.params.place_id)
-    getComments(this.props.match.params.place_id)
+    // getComments(this.props.match.params.place_id)
   }
 
   componentWillReceiveProps(newProps) {
@@ -19,8 +19,8 @@ class Listing extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    storeComment(this.props.match.params.place_id, this.state.br_comment)
-      getComments(this.props.match.params.place_id)
+    // storeComment(this.props.match.params.place_id, this.state.br_comment)
+    //   getComments(this.props.match.params.place_id)
   }
 
   handleChange = (e) => {
@@ -37,7 +37,7 @@ class Listing extends Component {
   render_photo() {
     if (this.props.current.photos) {
         return (<div id="photo1"><img src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400` +
-        `&key=AIzaSyAxQF4uwgD1M4D0W7_fj0zQaCppeHaTtC0` +
+        `&key=AIzaSyAmjIY1E4X_kqTBYDgngyXI5Q8npxmVSGU` +
         `&photoreference=${this.props.current.photos[0].photo_reference}`}
         id="photo2"
         alt="picture of establishment" />
@@ -56,7 +56,7 @@ class Listing extends Component {
             <div id="name1"><h3>Name</h3><p id="name2">{this.props.current.name}</p></div>
             <div id="addy1"><h3>Address</h3><p id="addy2">{this.props.current.formatted_address}</p></div>
             <div id="hours1"><h3>Hours</h3><p id="hours2">{this.props.current.opening_hours.weekday_text}</p></div>
-            <div id="commentsbox">
+            {/* <div id="commentsbox">
               <h3>Comments</h3>
               <form onSubmit={this.handleSubmit}>
                 <textarea onChange={this.handleChange} placeholder="Enter Comment Here"></textarea>
@@ -67,9 +67,9 @@ class Listing extends Component {
                     ))}
                   </ul>
                 </div>
-                <div id="bigbuttbox">
-                  <div className="buttbox">
-                    <button className="butt" type="submit">
+                <div id="bigbuttnbox">
+                  <div className="buttnbox">
+                    <button className="buttn" type="submit">
                       <p>Post Comment</p>
                     </button>
                   </div>
@@ -80,7 +80,7 @@ class Listing extends Component {
                   </div>
                 </div>
               </form>
-            </div>
+            </div> */}
             <div>
             </div>
           </div>

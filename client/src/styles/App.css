@@ -63,12 +63,12 @@ html {box-sizing:border-box;}
     padding-bottom: 18px;
 }
 
-#butt {
+#buttn {
     margin-bottom: 18px;
     border-radius: 5px;
 }
 
-#bigbuttbox {
+#bigbuttnbox {
     display:flex;
     justify-content: space-between;
     padding-bottom: 25px;
@@ -105,7 +105,7 @@ textarea:focus {
     outline:none;
 }
 
-.butt {
+.buttn {
     border-radius: 4px;
     cursor: pointer;
     color: darkslategray;

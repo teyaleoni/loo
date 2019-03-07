@@ -10,7 +10,7 @@ const initialState = {
   },
   hover: {},
   listingHover: {},
-  comments: []
+  // comments: []
 }
 
 export default function (state = initialState, action) {
@@ -35,8 +35,8 @@ export default function (state = initialState, action) {
 
       const newDetails = {...state.listing.details, ...update};
       return {...state, listing: {details: newDetails}}
-    case 'GET_COMMENTS':
-      return {...state, comments: action.comments}      
+    // case 'GET_COMMENTS':
+    //   return {...state, comments: action.comments}      
     default:
       return state
   }

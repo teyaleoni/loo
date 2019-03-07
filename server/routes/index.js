@@ -44,7 +44,7 @@ function getGoogleResults(keyword, nextPageToken = "") {
       "location=36.158522,-115.152391" +
       "&radius=2000" +
       `&keyword=${keyword}` +
-      "&key=AIzaSyAxQF4uwgD1M4D0W7_fj0zQaCppeHaTtC0" +
+      "&key=AIzaSyAmjIY1E4X_kqTBYDgngyXI5Q8npxmVSGU" +
       `&pagetoken=${nextPageToken}`;
 
     axios.get(url).then(resp => {
@@ -78,31 +78,31 @@ Router.get('/listings', (req, res, next) => {
 Router.get('/listing/:google_place_id', (req, res, next) => {
   const google_place_id = req.params["google_place_id"]
   const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${google_place_id}`
-    + `&key=AIzaSyAVJoGr5pyaGNsc0XpbOCYGB3EfKjxXuc4`;
+    + `&key=AIzaSyAmjIY1E4X_kqTBYDgngyXI5Q8npxmVSGU`;
   axios.get(url).then(resp => {
     res.send(resp.data.result);
   })
 })
 
-Router.get('/comments/:place_id', (req, res, next) => {
-  const sql = `SELECT a.*
-  FROM comments a
-  WHERE place_id = ?`
-  const place_id = [req.params.place_id]
+// Router.get('/comments/:place_id', (req, res, next) => {
+//   const sql = `SELECT a.*
+//   FROM comments a
+//   WHERE place_id = ?`
+//   const place_id = [req.params.place_id]
 
-  conn.query(sql, place_id, (error, results, fields) => {
-    console.log(results)
-    res.json(results);
-  });
-})
+//   conn.query(sql, place_id, (error, results, fields) => {
+//     console.log(results)
+//     res.json(results);
+//   });
+// })
 
-Router.post('/comment', (req, res, next) => {
-  const sql = `INSERT INTO comments (place_id, br_comment)
-  VALUES (?, ?)`
+// Router.post('/comment', (req, res, next) => {
+//   const sql = `INSERT INTO comments (place_id, br_comment)
+//   VALUES (?, ?)`
 
-  conn.query(sql, [req.body.place_id, req.body.br_comment], (error, results, fields) => {
-    res.json({ message: "Comment Added" });
-  })
-})
+//   conn.query(sql, [req.body.place_id, req.body.br_comment], (error, results, fields) => {
+//     res.json({ message: "Comment Added" });
+//   })
+// })
 
 export default Router
